@@ -1,17 +1,17 @@
-
 body {
   margin: 0;
-  background-color: #000;
+  background: radial-gradient(ellipse at top, #0d0d0d 0%, #000000 100%);
   color: #e0e0e0;
   font-family: 'Courier New', monospace;
 }
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
   padding: 2rem;
 }
 h1, h2 {
   color: #ff003c;
+  text-shadow: 0 0 10px rgba(255, 0, 60, 0.5);
 }
 code {
   background-color: #111;

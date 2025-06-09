@@ -4,32 +4,66 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Запретный Архив</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <style>
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
     .menu a {
-      display: block;
-      padding: 0.5rem 0;
-      font-size: 1.2rem;
-      color: #ff003c;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      padding: 1rem;
       text-decoration: none;
+      color: #ff003c;
+      font-size: 1rem;
+      border-radius: 8px;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(255,0,60,0.1);
     }
     .menu a:hover {
-      text-decoration: underline;
+      background: #2a2a2a;
+      box-shadow: 0 0 20px rgba(255,0,60,0.4);
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #777;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>📁 ЗАПРЕТНЫЙ АРХИВ</h1>
-    <p>Выберите сущность для просмотра:</p>
-    <div class="menu">
-      <a href="babadook.html">▶ БАБАДУК</a><a href="slenderman.html">▶ СЛЕНДЕРМЕН</a><a href="jeffkiller.html">▶ ДЖЕФФ-УБИЙЦА</a><a href="entity50.html">▶ ТИККИ</a><a href="entity51.html">▶ ВИНСЕНТ ДЕРК</a><a href="entity52.html">▶ СМАЙЛИ</a><a href="entity53.html">▶ ЛОКИ</a><a href="entity54.html">▶ ХЕНДЛЕР</a><a href="entity55.html">▶ ЗИМНИЙ МУЖЧИНА</a><a href="entity56.html">▶ ХАОС</a>
-    </div>
+    <p>Изучите зашифрованные файлы, содержащие описания зафиксированных сущностей. Некоторые могут быть активны...</p>
+    <div class="menu" id="entityLinks"></div>
+    <footer>© 2025 Запретный Архив. Автор: Архиволог</footer>
   </div>
-  <footer>
-  <p style="text-align: center; color: #555; margin-top: 3rem;">
-    если хочешь кого то добавить или улучшить описание пиши сюда @Grikdsa
-  </p>
-</footer>
+
+  <script>
+    const entities = [
+      { title: "БАБАДУК", file: "babadook.html" },
+      { title: "СЛЕНДЕРМЕН", file: "slenderman.html" },
+      { title: "ДЖЕФФ-УБИЙЦА", file: "jeffkiller.html" },
+      { title: "ТИККИ", file: "entity50.html" },
+      { title: "ВИНСЕНТ ДЕРК", file: "entity51.html" },
+      { title: "СМАЙЛИ", file: "entity52.html" },
+      { title: "ЛОКИ", file: "entity53.html" },
+      { title: "ХЕНДЛЕР", file: "entity54.html" },
+      { title: "ЗИМНИЙ МУЖЧИНА", file: "entity55.html" },
+      { title: "ХАОС", file: "entity56.html" },
+      { title: "Кто ты в мире крипипаст?", file: "quiz.html" }
+    ];
+    const container = document.getElementById("entityLinks");
+    entities.forEach(ent => {
+      const a = document.createElement("a");
+      a.href = ent.file;
+      a.textContent = `▶ ${ent.title}`;
+      container.appendChild(a);
+    });
+  </script>
 </body>
 </html>
