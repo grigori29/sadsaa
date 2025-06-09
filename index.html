@@ -12,20 +12,29 @@
       gap: 1rem;
       margin-top: 2rem;
     }
-    .menu a {
+    .card {
       background: #1a1a1a;
       border: 1px solid #333;
       padding: 1rem;
-      text-decoration: none;
       color: #ff003c;
-      font-size: 1rem;
+      text-decoration: none;
       border-radius: 8px;
       transition: 0.3s;
       box-shadow: 0 0 10px rgba(255,0,60,0.1);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
-    .menu a:hover {
+    .card:hover {
       background: #2a2a2a;
       box-shadow: 0 0 20px rgba(255,0,60,0.4);
+    }
+    .card img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 5px;
+      border: 1px solid #444;
     }
     footer {
       text-align: center;
@@ -42,26 +51,27 @@
     <div class="menu" id="entityLinks"></div>
     <footer>© 2025 Запретный Архив. Автор: Архиволог</footer>
   </div>
-
   <script>
     const entities = [
-      { title: "БАБАДУК", file: "babadook.html" },
-      { title: "СЛЕНДЕРМЕН", file: "slenderman.html" },
-      { title: "ДЖЕФФ-УБИЙЦА", file: "jeffkiller.html" },
-      { title: "ТИККИ", file: "entity50.html" },
-      { title: "ВИНСЕНТ ДЕРК", file: "entity51.html" },
-      { title: "СМАЙЛИ", file: "entity52.html" },
-      { title: "ЛОКИ", file: "entity53.html" },
-      { title: "ХЕНДЛЕР", file: "entity54.html" },
-      { title: "ЗИМНИЙ МУЖЧИНА", file: "entity55.html" },
-      { title: "ХАОС", file: "entity56.html" },
-      { title: "Кто ты в мире крипипаст?", file: "quiz.html" }
+      { title: "БАБАДУК", file: "babadook.html", img: "img/babadook.png" },
+      { title: "СЛЕНДЕРМЕН", file: "slenderman.html", img: "img/slenderman.jpg" },
+      { title: "ДЖЕФФ-УБИЙЦА", file: "jeffkiller.html", img: "img/jeff.png" },
+      { title: "ТИККИ", file: "entity50.html", img: "img/tikky.png" },
+      { title: "ВИНСЕНТ ДЕРК", file: "entity51.html", img: "img/vincent.jpg" },
+      { title: "СМАЙЛИ", file: "entity52.html", img: "img/smiley.png" },
+      { title: "ЛОКИ", file: "entity53.html", img: "img/loki.png" },
+      { title: "ХЕНДЛЕР", file: "entity54.html", img: "img/handler.png" },
+      { title: "ЗИМНИЙ МУЖЧИНА", file: "entity55.html", img: "img/winter.png" },
+      { title: "ХАОС", file: "entity56.html", img: "img/chaos.jpg" },
+      { title: "Кто ты в мире крипипаст?", file: "quiz.html", img: "img/quiz.png" }
     ];
+
     const container = document.getElementById("entityLinks");
     entities.forEach(ent => {
       const a = document.createElement("a");
       a.href = ent.file;
-      a.textContent = `▶ ${ent.title}`;
+      a.className = "card";
+      a.innerHTML = `<img src="${ent.img}" alt=""><span>▶ ${ent.title}</span>`;
       container.appendChild(a);
     });
   </script>
