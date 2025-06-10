@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Запретный Архив</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      padding: 1rem;
+      color: #ff003c;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(255,0,60,0.1);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .card:hover {
+      background: #2a2a2a;
+      box-shadow: 0 0 20px rgba(255,0,60,0.4);
+    }
+    .card img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 5px;
+      border: 1px solid #444;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+<a href="victims.html" style="
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  background: #ff003c;
+  padding: 0.6rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+">
+📄 Список всех жертв
+</a>
+
+  <div class="container">
+    <h1>📁 ЗАПРЕТНЫЙ АРХИВ</h1>
+    <p>Изучите зашифрованные файлы, содержащие описания зафиксированных сущностей. Некоторые могут быть активны...</p>
+    <div class="menu" id="entityLinks"></div>
+    <footer>© 2025 Запретный Архив. Автор: Архиволог</footer>
+  </div>
+  <script>
+    const entities = [
+      { title: "БАБАДУК", file: "babadook.html", img: "img/babadook.png" },
+      { title: "СЛЕНДЕРМЕН", file: "slenderman.html", img: "img/slenderman.jpg" },
+      { title: "ДЖЕФФ-УБИЙЦА", file: "jeffkiller.html", img: "img/jeff.png" },
+      { title: "ТИККИ", file: "entity50.html", img: "img/tikky.png" },
+      { title: "ВИНСЕНТ ДЕРК", file: "entity51.html", img: "img/vincent.jpg" },
+      { title: "СМАЙЛИ", file: "entity52.html", img: "img/smiley.png" },
+      { title: "ЛОКИ", file: "entity53.html", img: "img/loki.png" },
+      { title: "ХЕНДЛЕР", file: "entity54.html", img: "img/handler.png" },
+      { title: "ЗИМНИЙ МУЖЧИНА", file: "entity55.html", img: "img/winter.png" },
+      { title: "ХАОС", file: "entity56.html", img: "img/chaos.jpg" },
+      { title: "Кто ты в мире крипипаст?", file: "quiz.html", img: "img/quiz.png" }
+    ];
+
+    const container = document.getElementById("entityLinks");
+    entities.forEach(ent => {
+      const a = document.createElement("a");
+      a.href = ent.file;
+      a.className = "card";
+      a.innerHTML = `<img src="${ent.img}" alt=""><span>▶ ${ent.title}</span>`;
+      container.appendChild(a);
+    });
+  </script>
+</body>
+</html>
